@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Need Free Wheels</title>
+    <link rel="stylesheet" href="src/style/style.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="src/image/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="preloader">
+        <img src="src/image/loader2.png" alt="loader" class="loader">
+    </div>
+    <div class="game_header hide">
+        <h2 class="score"></h2>
+        <div class="header_buttons">
+            <button class="mute ">
+                <img class="mute_icon" src="src/image/mute_on.png" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="game_window">
+        <h3 class="bestScore"></h3>
+        <!-- MAIN MENU -->
+        <div class="main-menu">
+            <div class="menu-button">
+                <button class="start">Старт!</button>
+                <div class="level hide">
+                    <button class="hard">Сложный</button>
+                    <button class="middle">Средний</button>
+                    <button class="easy">Легкий</button>
+                </div>
+    
+            </div>
+        </div>
+        <!-- CHANGE CAR -->
+        <div class="change_car hide">
+            <p class="change_car_title">Выбери машину</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img class='player_car player_car_one' src="./src/image/player1.png" alt=""></div>
+                  <div class="swiper-slide"><img class='player_car player_car_two' src="./src/image/player2.png" alt=""></div>
+                  <div class="swiper-slide"><img class='player_car player_car_three' src="./src/image/player3.png" alt=""></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <button class="current_car">Выбрать</button>
+        </div>
+        <!-- GAME AREA -->
+        <div class="game hide">
+            <div class="roadside"></div>
+            <div class="gameArea"></div>
+            <div class="roadside"></div>
+        </div>
+
+    </div>
+    <audio src="src/audio/audio.mp3" class="audio"></audio>
+    <audio src="src/audio/audio-brake.mp3" class="brake"></audio>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="src/js/index.js" type="module"></script>
+
+</body>
+</html>

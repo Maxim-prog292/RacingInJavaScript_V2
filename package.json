@@ -1,0 +1,13 @@
+{
+  "name": "racinginjavascript_v2",
+  "version": "2.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "MaksimProg",
+  "license": "ISC"
+  
+}
