@@ -9,11 +9,13 @@ const swiper = new Swiper(".mySwiper", {
     },
   });
 
+  let sliderIndex;
+
   export default function onShowChangeCar(changeCarWindow) {
     changeCarWindow.classList.remove('hide');
-    let sliderIndex = 0;
     swiper.on('slideChange',  () => {
-        sliderIndex = swiper.realIndex ;
+        sliderIndex = swiper.realIndex;
+        console.log(sliderIndex);
     });
 
     return sliderIndex;

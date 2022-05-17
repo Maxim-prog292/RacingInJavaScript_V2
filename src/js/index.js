@@ -9,7 +9,6 @@ window.addEventListener('load', () => {
 
 window.addEventListener('DOMContentLoaded', (e) => {
     const MAX_ENEMY = 3;
-    
 
     const score = document.querySelector('.score'),
         start = document.querySelector('.start'),
@@ -238,7 +237,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         settings.speed = 6;
         settings.traffic = 2;
 
-        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow));
+        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow), changeCarWindow);
     }
     // средний уровень
     function middleGame() {
@@ -248,7 +247,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         settings.speed = 5;
         settings.traffic = 3;
 
-        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow));
+        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow), changeCarWindow);
     }
     // простой уровень
     function easyGame() {
@@ -258,7 +257,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         settings.speed = 4;
         settings.traffic = 4;
 
-        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow));
+        changeCar(currentCar, startGame, () =>onShowChangeCar(changeCarWindow), changeCarWindow);
     }
     // скрытие меню
     function HideMineMenu() {
