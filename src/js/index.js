@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         easy = document.querySelector('.easy');
 
     let car;
-    let sliderIndex = 0;
+    // let sliderIndex = 0;
 
     hard.addEventListener('click', hardGame);
     middle.addEventListener('click', middleGame);
@@ -82,11 +82,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
         changeCarWindow.classList.add('hide');
         
         for (let i = 0; i < 4; i++) {
-            const line = document.createElement('div');
-            line.classList.add('road');
-            line.style.top = (i * 550) + 'px';
-            line.y = i * 100;
-            gameArea.appendChild(line);
+            const line1 = document.createElement('div');
+
+            line1.classList.add('road');
+            line1.classList.add(`index${i}`);
+
+            line1.style.top = 0 + 'px';
+
+            line1.y = 100;
+            gameArea.appendChild(line1);
         }
         for (let i = 0; i < getQuantityElements(100); i++) {
             const line = document.createElement('div');
@@ -154,7 +158,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             moveRoad();
             moveLineInRoad();
 
-            moveEnemy();
+            // moveEnemy();
 
             if ( (keys.ArrowLeft || keys.a || keys['ф']) && settings.x > 0) {
                 settings.x -= settings.speed;
@@ -179,15 +183,39 @@ window.addEventListener('DOMContentLoaded', (e) => {
     // движение дороги
     function moveRoad() {
         let lines = document.querySelectorAll('.road');
-        lines.forEach(function (line){
-            line.y += settings.speed;
-            line.style.top = line.y + 'px';
-    
-            if ( line.y > document.documentElement.clientHeight) {
-                line.y = -300;
-            }
-        })
+        // lines.forEach(function (line){
+        moveRoadOnIndex(lines[0], -390);
+        moveRoadOnIndex(lines[1], 0);
+        moveRoadOnIndex(lines[2], 390);
+        moveRoadOnIndex(lines[3], -(390 * 2));
+            
+            // if (line.y > 0 ) {
+            //     const line = document.createElement('div');
+            //     line.classList.add('road');
+            //     line.style.top = 0 + 'px';
+            //     line.y = 100;
+            //     gameArea.appendChild(line);
+            // }
+        // })
     };
+    function moveRoadOnIndex(line, heightRoad) {
+        line.y += settings.speed;
+        line.style.top = line.y + heightRoad + 'px';
+
+        let lines = document.querySelectorAll('.road');
+        lines.forEach((line, index) => {
+
+            if (lines[index].y > document.documentElement.clientHeight) {
+                if(index == 3) {
+                    let theFirstChild = gameArea.firstChild;
+
+                    gameArea.insertBefore(lines[index], theFirstChild);
+                }
+                lines[index].y = 0;
+            }
+        })   
+    }
+
     // движение разметки
     function moveLineInRoad() {
         let lines = document.querySelectorAll('.line_in_road');

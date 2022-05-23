@@ -9,7 +9,7 @@ const swiper = new Swiper(".mySwiper", {
     },
   });
 
-  let sliderIndex;
+  let sliderIndex = 0;
 
   export default function onShowChangeCar(changeCarWindow) {
     changeCarWindow.classList.remove('hide');

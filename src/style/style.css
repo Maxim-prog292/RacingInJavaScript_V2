@@ -152,7 +152,7 @@ body {
     align-items: center;
 }
 .roadside {
-    width: 33.5vw;
+    width: 37.5vw;
     height: 100vh;
     background: #ebde30;
 }
@@ -226,10 +226,10 @@ body {
 
 
 .gameArea {
-    width: 33.5vw;;
+    width: 25.5vw;
     height: 100vh;
     position: relative;
-    background: rgb(65, 65, 65);
+    background: rgb(54, 54, 54);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -238,19 +238,26 @@ body {
 }
 .road {
     position: absolute;
-    width: 33.5vw;
-    height: 700px;
-    background: url(../image/road2.jpg);
+    width: inherit;
+    height: 493px;
+    background: url(../image/road5.jpg) no-repeat;
+    background-position: center;
+    background-size: contain;
     z-index: 1;
     margin: 0;
     padding: 0;
 }
+/* @media screen and (min-width: 1440px) {
+    .road {
+        height: 430px;
+    }
+  } */
 .line_in_road {
     position: absolute;
-    width: 20px;
+    width: 10px;
     height: 30px;
-    background: #ebde30;
-    left: 240px;
+    background: #ffffff;
+    left: 190px;
     z-index: 1;
     margin: 0;
     padding: 0;
